@@ -22,8 +22,8 @@ public class Queue {
             System.out.println("System Underflow");
         }
         int item = queue[0];
-        for (int i = 0; i < size-1; i++) {
-            queue[i] = queue[i+1];
+        for (int i = 1; i < size; i++) {
+            queue[i-1] = queue[i];
         };
         size--;
         queue[size] = 0;
