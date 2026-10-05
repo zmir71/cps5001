@@ -1,42 +1,41 @@
 public class Queue {
     private final int[] queue;
-    private int rear;
+    private int size;
     private final int capacity;
 
     public Queue(int capacity) {
         this.capacity = capacity;
         queue = new int[capacity];
-        rear = -1;
+        size = 0;
     }
 
     public void enqueue(int item) {
-        if (rear == capacity) {
+        if (capacity == -1) {
             System.out.println("System Overflow");
         }
-        queue[++rear] = item;
-        return;
+        queue[size] = item;
+        size++;
     }
 
-    public void dequeue() {
-        int size = queue.length;
+    public int dequeue() {
         if (isEmpty()) {
             System.out.println("System Underflow");
         }
         int item = queue[0];
-        for (int i = 1; i <= size-1; i++) {
-            queue[i-1] = queue[i];
-        }
-        System.out.println(item);
-        return;
+        for (int i = 0; i < size-1; i++) {
+            queue[i] = queue[i+1];
+        };
+        size--;
+        queue[size] = 0;
+        return item;
     }
 
-    public void peek() {
+    public int peek() {
         if (queueSize() == 0 ) {
             System.out.println("System Underflow");
         }
-         int item = queue[0];
-         System.out.println(item);
-         return;
+        System.out.println(queue[size]);
+        return queue[size];
     }
 
     public boolean isEmpty() {
@@ -67,6 +66,5 @@ public class Queue {
         queue.enqueue(35);
         queue.dequeue();
         queue.display();
-
     }
 }
