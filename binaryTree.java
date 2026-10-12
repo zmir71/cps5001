@@ -90,4 +90,6 @@ public void main(String[] args) {
     tree.insert(tree.root, 17);
     tree.insert(tree.root, 20);
     tree.insert(tree.root, 30);
+    System.out.println("In Order Traversal");
+    tree.inorder(tree.root);
 }
