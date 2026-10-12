@@ -70,8 +70,7 @@ class binarySearchTreeNode {
     }
 
 }
-public static void main(String[] args) {
-    binarySearchTreeNode root = new binarySearchTreeNode(10);
+public void main(String[] args) {
     binarySearchTreeNode SearchTree = new binarySearchTreeNode(10);
     SearchTree.insert(17);
     SearchTree.insert(20);
