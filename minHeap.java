@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 public class minHeap {
     private int[] heap;
     private int capacity;
@@ -78,11 +79,14 @@ public class minHeap {
             heapifyDown(0);
         }
         return min;
+    }
 
 
-    private List<Integer> getHeap() {
+    public List<Integer> getHeap() {
         List<Integer> result = new ArrayList<>();
-        System.arraycopy(heap, 0, result, 0, size-1);
+        for (int i = 0; i < size; i++) {
+            result.add(heap[i]);
+        }
         return result;
     }
 
