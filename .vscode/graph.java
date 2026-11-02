@@ -18,4 +18,13 @@ public class graph<T> {
         adjacencyList.get(v1).add(v2);
         adjacencyList.get(v2).add(v1);
     }
+
+    public void removeVertex(T v1, T v2) {
+        adjacencyList.remove(v1);
+    }
+
+    public void removeEdge(T v1, T v2) {
+        adjacencyList.get(v1).remove(v1);
+        adjacencyList.get(v2).remove(v2);
+    }
 }
